@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card rounded-0 shadow">
+    <div class="card-body">
+        <div class="container-fluid">
+            <form action="" method="POST">
+                {% csrf_token %}
+                <center>
+                    <fieldset class="form-group">
+                        <legend class="border-bottom mb-4"><h2>Create an Account</h2></legend>
+                    </fieldset>
+                    <!-- Render form fields dynamically -->
+                    {{ form.as_p }}
+                    <!-- Signup Button -->
+                    <div class="form-group">
+                        <button class="btn btn-primary btn-block rounded-pill" type="submit">Sign Up</button>
+                    </div>
+                </center>
+            </form>
+            <!-- Link to Login Page -->
+            <div class="text-right">
+                <small class="text-muted">
+                    Already Have An Account? <a class="ml-2" href="{% url 'login' %}">Login Now</a>
+                </small>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="content-section">
+    <!-- Additional Content Here -->
+</div>
+{% endblock %}
